@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6F1B8DA1-1713-4449-AC8D-7A13DCFACE70}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>SipUALib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)3rdParty/include;$(DXSDK_DIR)Include;C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\multimedia\directshow\baseclasses;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)3rdParty/lib/$(Configuration);$(SolutionDir)3rdParty/lib/release;$(DXSDK_DIR)Lib/x86;C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\multimedia\directshow\baseclasses\Debug;$(LibraryPath)</LibraryPath>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)3rdParty/include;$(DXSDK_DIR)Include;C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\multimedia\directshow\baseclasses;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)3rdParty/lib/$(Configuration);$(SolutionDir)3rdParty/lib/release;$(DXSDK_DIR)Lib/x86;C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\multimedia\directshow\baseclasses\Debug;$(LibraryPath)</LibraryPath>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>jthread_d.lib;jrtplib_d.lib;osipparser2.lib;osip2.lib;exosip2.lib;WS2_32.Lib;Dnsapi.lib;iphlpapi.lib;libeay32.lib;ssleay32.lib;Crypt32.lib;libspeexdsp.lib;strmbasd.lib;winmm.lib;msvcrtd.lib;avcodec.lib;avutil.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>jthread.lib;jrtplib.lib;osipparser2.lib;osip2.lib;exosip2.lib;WS2_32.Lib;Dnsapi.lib;iphlpapi.lib;libeay32.lib;ssleay32.lib;Crypt32.lib;libspeexdsp.lib;strmbase.lib;winmm.lib;msvcrt.lib;avcodec.lib;avutil.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AeccFreeList.h" />
+    <ClInclude Include="AeccPublicDefs.h" />
+    <ClInclude Include="AudioAECThread.h" />
+    <ClInclude Include="AudioCaptureThread.h" />
+    <ClInclude Include="AudioPackThread.h" />
+    <ClInclude Include="AudioPlayThread.h" />
+    <ClInclude Include="AudioReceiveSession.h" />
+    <ClInclude Include="AudioSendSession.h" />
+    <ClInclude Include="AudioThread.h" />
+    <ClInclude Include="AVHeader.h" />
+    <ClInclude Include="AVRTPSession.h" />
+    <ClInclude Include="BufferManager.h" />
+    <ClInclude Include="CodecUtils.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="EchoCanceller.h" />
+    <ClInclude Include="LookSide.h" />
+    <ClInclude Include="PackageOueue.h" />
+    <ClInclude Include="PushGuids.h" />
+    <ClInclude Include="PushSource.h" />
+    <ClInclude Include="SipClient.h" />
+    <ClInclude Include="SipSettings.h" />
+    <ClInclude Include="SipUA.h" />
+    <ClInclude Include="SipUALib.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="VideoCapture.h" />
+    <ClInclude Include="VideoCaptureThread.h" />
+    <ClInclude Include="VideoPackThread.h" />
+    <ClInclude Include="VideoPlayThread.h" />
+    <ClInclude Include="VideoReceiveSession.h" />
+    <ClInclude Include="VideoSendSession.h" />
+    <ClInclude Include="VideoUnPackThread.h" />
+    <ClInclude Include="Worker.h" />
+    <ClInclude Include="WorkThread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AeccFreeList.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="AudioAECThread.cpp" />
+    <ClCompile Include="AudioCaptureThread.cpp" />
+    <ClCompile Include="AudioPackThread.cpp" />
+    <ClCompile Include="AudioPlayThread.cpp" />
+    <ClCompile Include="AudioReceiveSession.cpp" />
+    <ClCompile Include="AudioSendSession.cpp" />
+    <ClCompile Include="AudioThread.cpp" />
+    <ClCompile Include="AVRTPSession.cpp" />
+    <ClCompile Include="BufferManager.cpp" />
+    <ClCompile Include="CodecUtils.cpp" />
+    <ClCompile Include="EchoCanceller.cpp" />
+    <ClCompile Include="LookSide.cpp" />
+    <ClCompile Include="PackageOueue.cpp" />
+    <ClCompile Include="PushSource.cpp" />
+    <ClCompile Include="setup.cpp" />
+    <ClCompile Include="SipClient.cpp" />
+    <ClCompile Include="SipSettings.cpp" />
+    <ClCompile Include="SipUA.cpp" />
+    <ClCompile Include="SipUALib.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="VideoCapture.cpp" />
+    <ClCompile Include="VideoCaptureThread.cpp" />
+    <ClCompile Include="VideoPackThread.cpp" />
+    <ClCompile Include="VideoPlayThread.cpp" />
+    <ClCompile Include="VideoReceiveSession.cpp" />
+    <ClCompile Include="VideoSendSession.cpp" />
+    <ClCompile Include="VideoUnPackThread.cpp" />
+    <ClCompile Include="Worker.cpp" />
+    <ClCompile Include="WorkThread.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AeccFreeList.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
