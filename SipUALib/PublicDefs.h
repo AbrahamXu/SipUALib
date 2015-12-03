@@ -3,10 +3,6 @@
 #ifndef __PUBLICDEFS_H__
 #define __PUBLICDEFS_H__
 
-// set inlining
-#ifndef   _INLINE
-#define   _INLINE inline
-#endif // _INLINE
 
 #ifndef   _ENABLE_INLINES
 #define   _ENABLE_INLINES
