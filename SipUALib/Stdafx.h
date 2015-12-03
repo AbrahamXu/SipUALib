@@ -4,6 +4,9 @@
 
 #pragma once
 
+// This list contains the highest version constants supported by content
+// in the Windows SDK.
+#define _WIN32_WINNT_MAXVER     0x0601
 
 #include <afxwin.h>         // MFC core and standard components
 #include "AVHeader.h"
