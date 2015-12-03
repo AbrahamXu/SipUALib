@@ -89,12 +89,6 @@
     <ClInclude Include="WorkThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AeccFreeList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AeccPublicDefs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LookSide.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -112,6 +106,12 @@
     </ClInclude>
     <ClInclude Include="BufferManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicDefs.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -190,9 +190,6 @@
     <ClCompile Include="WorkThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AeccFreeList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="LookSide.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -211,9 +208,12 @@
     <ClCompile Include="BufferManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FreeList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="AeccFreeList.inl">
+    <None Include="FreeList.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

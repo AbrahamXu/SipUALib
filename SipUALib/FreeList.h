@@ -38,7 +38,7 @@ namespace FreeListDetails
 			~FreeListLocker();
 		private:
 			// this single static instance of a FreeListCriticalSection object
-			FreeListFREELISTAPI static FreeListCriticalSection m_section;
+			FREELISTAPI static FreeListCriticalSection m_section;
 		};
 
 	private:

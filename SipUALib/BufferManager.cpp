@@ -2,7 +2,7 @@
 #include "BufferManager.h"
 
 #include "LookSide.h"
-#include "AeccFreeList.h"
+#include "FreeList.h"
 
 
 BufferManager g_freeDict;
@@ -48,12 +48,12 @@ void* BufferManager::Alloc(const size_t &size)
     }
     else
     {
-        AeccDetails::FreeList* pList = NULL;
+        FreeListDetails::FreeList* pList = NULL;
         FreeDict::iterator it;
         if (m_mgr.size() <= 0
             || (it = m_mgr.find(size)) == m_mgr.end())
         {
-            pList = new AeccDetails::MyFreeList<true>(size);
+            pList = new FreeListDetails::MyFreeList<true>(size);
             m_mgr.insert(std::make_pair(size, pList));
         }
         else
@@ -61,8 +61,8 @@ void* BufferManager::Alloc(const size_t &size)
             pList = it->second;
         }
 
-        AeccDetails::MyFreeList<true>* pMyList = 
-            static_cast<AeccDetails::MyFreeList<true>*>( pList );
+        FreeListDetails::MyFreeList<true>* pMyList = 
+            static_cast<FreeListDetails::MyFreeList<true>*>( pList );
 
         pBufNew = pMyList->Alloc(size);
     }
@@ -92,7 +92,7 @@ void BufferManager::Free(void *ptr,const size_t &size)
     }
     else
     {
-        AeccDetails::FreeList* pList = NULL;
+        FreeListDetails::FreeList* pList = NULL;
         FreeDict::iterator it;
         ASSERT(m_mgr.size() > 0);
         it = m_mgr.find(size);
@@ -102,8 +102,8 @@ void BufferManager::Free(void *ptr,const size_t &size)
             pList = it->second;
         }
 
-        AeccDetails::MyFreeList<true>* pMyList = 
-            static_cast<AeccDetails::MyFreeList<true>*>( pList );
+        FreeListDetails::MyFreeList<true>* pMyList = 
+            static_cast<FreeListDetails::MyFreeList<true>*>( pList );
         pMyList->Free(ptr, size);
     }
 

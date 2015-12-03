@@ -7,7 +7,7 @@
 
 #pragma push_macro("new")
 #undef new
-AECC_IMPLEMENT_FREELIST(BaseBuffer);
+_IMPLEMENT_FREELIST(BaseBuffer);
 #pragma pop_macro("new")
 
 BaseBuffer::BaseBuffer(BYTE* pBuf, int size)
@@ -34,7 +34,7 @@ BaseBuffer::~BaseBuffer()
 
 #pragma push_macro("new")
 #undef new
-AECC_IMPLEMENT_FREELIST(AudioBuffer);
+_IMPLEMENT_FREELIST(AudioBuffer);
 #pragma pop_macro("new")
 
 AudioBuffer::AudioBuffer(BYTE* pBuf, int size, double sysTimeRecordedOrPlayed)
@@ -56,7 +56,7 @@ AudioBuffer::~AudioBuffer()
 
 #pragma push_macro("new")
 #undef new
-AECC_IMPLEMENT_FREELIST(PlayBuffer);
+_IMPLEMENT_FREELIST(PlayBuffer);
 #pragma pop_macro("new")
 
 PlayBuffer::PlayBuffer(BYTE* pBuf, int size, uint32_t seqNumber, uint32_t extSeqNumber, double sysTimeReceived)
@@ -78,13 +78,13 @@ PlayBuffer::~PlayBuffer()
 
 #pragma push_macro("new")
 #undef new
-AECC_IMPLEMENT_FREELIST(VideoFrame);
+_IMPLEMENT_FREELIST(VideoFrame);
 #pragma pop_macro("new")
 
 
 #pragma push_macro("new")
 #undef new
-AECC_IMPLEMENT_FREELIST(VideoPackage);
+_IMPLEMENT_FREELIST(VideoPackage);
 #pragma pop_macro("new")
 
 

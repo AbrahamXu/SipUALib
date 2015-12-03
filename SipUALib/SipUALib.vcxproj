@@ -82,8 +82,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AeccFreeList.h" />
-    <ClInclude Include="AeccPublicDefs.h" />
     <ClInclude Include="AudioAECThread.h" />
     <ClInclude Include="AudioCaptureThread.h" />
     <ClInclude Include="AudioPackThread.h" />
@@ -97,8 +95,10 @@
     <ClInclude Include="CodecUtils.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="EchoCanceller.h" />
+    <ClInclude Include="FreeList.h" />
     <ClInclude Include="LookSide.h" />
     <ClInclude Include="PackageOueue.h" />
+    <ClInclude Include="PublicDefs.h" />
     <ClInclude Include="PushGuids.h" />
     <ClInclude Include="PushSource.h" />
     <ClInclude Include="SipClient.h" />
@@ -118,7 +118,6 @@
     <ClInclude Include="WorkThread.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AeccFreeList.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="AudioAECThread.cpp" />
     <ClCompile Include="AudioCaptureThread.cpp" />
@@ -131,6 +130,7 @@
     <ClCompile Include="BufferManager.cpp" />
     <ClCompile Include="CodecUtils.cpp" />
     <ClCompile Include="EchoCanceller.cpp" />
+    <ClCompile Include="FreeList.cpp" />
     <ClCompile Include="LookSide.cpp" />
     <ClCompile Include="PackageOueue.cpp" />
     <ClCompile Include="PushSource.cpp" />
@@ -155,7 +155,7 @@
     <ClCompile Include="WorkThread.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AeccFreeList.inl" />
+    <None Include="FreeList.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -9,14 +9,14 @@
 #include <math.h>
 #include <map>
 #include <afxmt.h>
-#include "AeccFreeList.h"
+#include "FreeList.h"
 
 
 class BaseBuffer
 {
 #pragma push_macro("new")
 #undef new
-    AECC_DECLARE_FREELIST(BaseBuffer);
+    _DECLARE_FREELIST(BaseBuffer);
 #pragma pop_macro("new")
 
 public:
@@ -50,7 +50,7 @@ class AudioBuffer : public BaseBuffer, public AECInfo
 {
 #pragma push_macro("new")
 #undef new
-    AECC_DECLARE_FREELIST(AudioBuffer);
+    _DECLARE_FREELIST(AudioBuffer);
 #pragma pop_macro("new")
 
 public:
@@ -86,7 +86,7 @@ class PlayBuffer : public BaseBuffer, public RTPPackageInfo
 {
 #pragma push_macro("new")
 #undef new
-    AECC_DECLARE_FREELIST(PlayBuffer);
+    _DECLARE_FREELIST(PlayBuffer);
 #pragma pop_macro("new")
 
 public:
@@ -296,7 +296,7 @@ class VideoFrame : public VIDEOFRAMEHEADER, public BaseBuffer, public RTPPackage
 {
 #pragma push_macro("new")
 #undef new
-    AECC_DECLARE_FREELIST(VideoFrame);
+    _DECLARE_FREELIST(VideoFrame);
 #pragma pop_macro("new")
 
 public:
@@ -332,7 +332,7 @@ class VideoPackage : public VIDEOPACKAGEHEADER, public BaseBuffer, public RTPPac
 {
 #pragma push_macro("new")
 #undef new
-    AECC_DECLARE_FREELIST(VideoPackage);
+    _DECLARE_FREELIST(VideoPackage);
 #pragma pop_macro("new")
 
 public:

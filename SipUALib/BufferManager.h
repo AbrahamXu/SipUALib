@@ -4,14 +4,14 @@
 
 #include <jrtplib3/rtpmemorymanager.h>
 
-class AeccDetails::FreeList;
+class FreeListDetails::FreeList;
 class LookSide;
 
 
 class BufferManager : public jrtplib::RTPMemoryManager
 {
 private:
-    typedef std::map<size_t, AeccDetails::FreeList*> FreeDict;
+    typedef std::map<size_t, FreeListDetails::FreeList*> FreeDict;
     typedef std::map<size_t, LookSide*> LookSideDict;
 public:
     BufferManager();
